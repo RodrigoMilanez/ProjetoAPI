@@ -32,12 +32,13 @@ export class Tab1Page implements OnDestroy {
 }
 
   onSubmit() {
-    const type = this.form.value.type;        
+    const usuario = this.form.value.usuario;        
 
-    const subscription = this.gitService.getActivity(type)
+    const subscription = this.gitService.getActivity(usuario)
         .subscribe(
             (activity) => {
                 this.activity = activity;
+                console.log(activity);
             },
             (error) => {
                 console.error(error);
