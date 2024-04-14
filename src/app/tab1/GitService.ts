@@ -14,7 +14,7 @@ export class GitService {
         return this.httpClient.get<GitResponse>(
             'https://api.github.com/users/alsfurlan'
         ).pipe(
-            map((response) => response.activity)
+            map((response) => response.name)
         )
     }
 }
