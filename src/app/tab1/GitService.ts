@@ -9,12 +9,12 @@ export class GitService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getActivity(user: string): Observable<string> {
+    getActivity(user: string): Observable<GitResponse> {
 
         return this.httpClient.get<GitResponse>(
             'https://api.github.com/users/' + user
         ).pipe(
-            map((response) => response.name )
+            map((response) => response )
         )
     }
 }

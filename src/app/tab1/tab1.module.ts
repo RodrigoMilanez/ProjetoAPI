@@ -8,6 +8,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GitService } from './GitService';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [{
   path: 'user',
@@ -22,6 +23,7 @@ const routes: Routes = [{
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
     ReactiveFormsModule,
+    CommonModule,
     RouterModule.forChild(routes)
   ],
   declarations: [Tab1Page],

@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { GitService } from './GitService';
+import { GitResponse } from './tab1.model';
 
 @Component({
   selector: 'app-tab1',
@@ -14,13 +15,16 @@ export class Tab1Page implements OnDestroy {
   nome: string = ''; 
   img: string = ''; 
 
-  activity = '';
+  activity!: GitResponse;
 
   private subscriptions = new Subscription();
 
   form: FormGroup = new FormGroup({
-    usuario: new FormControl('')
+    
+    usuario: new FormControl('', Validators.required)
   })
+
+  
   
   constructor(private gitService : GitService) {
 

@@ -1,25 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      https://api.github.com/
+      Github
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-
-
     <ion-content [fullscreen]="true">
       <ion-item>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <ion-label>Type</ion-label>
-            <ion-input formControlName="usuario" placeholder="Adicione um usuário" label="Usuário">
+            <ion-input class="ion-padding" formControlName="usuario" placeholder="Adicione um usuário" label="Usuário">
             </ion-input>
-            <ion-button type="submit">Search</ion-button>
+            <ion-button  type="submit">Search</ion-button>
         </form>
       </ion-item>
       <ion-item>
-          <h1>
-              <ion-text color="primary">{{activity}}</ion-text>
-          </h1>
       </ion-item>
+      <ion-item >
+        <h1>
+          <ion-text color="primary">{{activity.name}}</ion-text>
+        </h1><br>
+        <h2>
+          <ion-text color="primary">{{activity.bio}}</ion-text>
+        </h2>
+      </ion-item>
+
     </ion-content>

@@ -1,5 +1,5 @@
 export type GitResponse = {
-    "user":string,
     "name": string,
-    "img": string
+    "bio":string,
+    "avatar_url": string
 }
