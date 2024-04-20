@@ -1,6 +1,6 @@
 
 import { HttpClient, HttpHeaders  } from "@angular/common/http";
-import { GitResponse } from "./tab1.model";
+import { GitRepository, GitResponse } from "./tab1.model";
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 
@@ -16,5 +16,11 @@ export class GitService {
         ).pipe(
             map((response) => response )
         )
+    }
+
+    getRepositories(profileName: string): Observable<GitRepository[]> {
+        return this.httpClient.get<GitRepository[]>(`
+        http://api.github.com/users/${profileName}/repos
+        `)
     }
 }

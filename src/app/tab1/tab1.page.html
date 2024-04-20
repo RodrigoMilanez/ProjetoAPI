@@ -15,7 +15,7 @@
       </ion-item>
       <ion-item>
       </ion-item>
-      <ion-item *ngIf="activity" [routerLink]="[ activity.login]">
+      <ion-item *ngIf="activity" [routerLink]="['../repositories', activity.login]">
         <ion-avatar slot="start">
           <img [src]="activity.avatar_url" />
         </ion-avatar>
