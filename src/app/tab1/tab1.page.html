@@ -15,13 +15,13 @@
       </ion-item>
       <ion-item>
       </ion-item>
-      <ion-item >
-        <h1>
-          <ion-text color="primary">{{activity.name}}</ion-text>
-        </h1><br>
-        <h2>
-          <ion-text color="primary">{{activity.bio}}</ion-text>
-        </h2>
+      <ion-item *ngIf="activity" [routerLink]="[ activity.login]">
+        <ion-avatar slot="start">
+          <img [src]="activity.avatar_url" />
+        </ion-avatar>
+      <ion-label>
+          <h1>{{activity.name}}</h1>
+          <h2>{{activity.bio}}</h2>
+      </ion-label>
       </ion-item>
-
     </ion-content>
