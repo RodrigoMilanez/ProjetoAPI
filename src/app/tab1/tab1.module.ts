@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GitService } from './GitService';
 import { CommonModule } from '@angular/common';
+import { RepositoriesComponent } from './Repositories/repositories.component';
 
 const routes: Routes = [{
   path: 'user',
@@ -26,7 +27,7 @@ const routes: Routes = [{
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [Tab1Page],
+  declarations: [Tab1Page, RepositoriesComponent],
   providers: [GitService],
 })
 export class Tab1PageModule {}
